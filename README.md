@@ -12,7 +12,7 @@ While i love css and beleive design to be at the center of development and the o
 2. Bower install
 3. gulp serve
 
-##Styles
+###Styles
 1. Background Coloration
 2. Font Coloration
 3. Text Highlight
