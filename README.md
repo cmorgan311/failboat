@@ -11,3 +11,11 @@ While i love css and beleive design to be at the center of development and the o
 1. Npm install
 2. Bower install
 3. gulp serve
+
+##Styles
+1. Background Coloration
+2. Font Coloration
+3. Text Highlight
+4. Font Alterations
+5. Scale Text
+6. ... more!
