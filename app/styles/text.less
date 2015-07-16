@@ -4,7 +4,7 @@
 .text-right{ text-align: right; }
 .text-center{ text-align: center; }
 .text-bold{ font-weight:900; }
-.text-medium{ font-weight:700; }
+.text-medium{ font-weight:600; }
 .text-normal{ font-weight:400; }
 .text-light{ font-weight:100; }
 
@@ -24,13 +24,20 @@
 	border-bottom:2px solid darken(@gray,25%);
 	padding:10px;
 	color: darken(@gray,20%);
-	letter-spacing: 1px;
+	letter-spacing: .75px;
 	line-height: 150%;
 }
 
 .text-{
 	.-(@i: 50) when (@i >= 0) {
 		&size@{i} { font-size: (@i * 1px); }
+		.-((@i - 1))
+ 	} .-;
+}
+
+.letterSpacing{
+	.-(@i: 10) when (@i >= -5) {
+		&@{i} { letter-spacing: (@i * 1px); }
 		.-((@i - 1))
  	} .-;
 }
@@ -51,9 +58,14 @@
 	.-(@i: length(@colors)) when (@i > 0) {
 		@name: extract(@colors, @i);
 		&@{name} {
-			padding:3px;
-			background-color: lighten(@@name,25%);
-			color: darken(@@name,25%);	
+			padding:3px 5px 3px 5px;
+			background-color: lighten(@@name,15%);
+			color: darken(@@name,25%);
+
+			&.text-highlight-hover:hover{
+				background-color: darken(@@name,15%);
+				color: lighten(@@name,30%);
+			}	
 
 		}
 		.-((@i - 1))
