@@ -1,0 +1,75 @@
+@import 'colors';
+
+.text-left{ text-align: left; }
+.text-right{ text-align: right; }
+.text-center{ text-align: center; }
+.text-bold{ font-weight:900; }
+.text-medium{ font-weight:700; }
+.text-normal{ font-weight:400; }
+.text-light{ font-weight:100; }
+
+.code-block{
+	background-color: lighten(@gray, 15%);
+	border-left:7px solid lighten(@blue,20%);
+	border-top:2px solid lighten(@blue,25%);
+	padding:10px;
+	color: lighten(@blue,10%);
+	letter-spacing: 1px;
+	line-height: 150%;
+}
+
+.code-block-alt{
+	background-color: lighten(@gray, 15%);
+	border-left:7px solid darken(@gray,20%);
+	border-bottom:2px solid darken(@gray,25%);
+	padding:10px;
+	color: darken(@gray,20%);
+	letter-spacing: 1px;
+	line-height: 150%;
+}
+
+.text-{
+	.-(@i: 50) when (@i >= 0) {
+		&size@{i} { font-size: (@i * 1px); }
+		.-((@i - 1))
+ 	} .-;
+}
+
+.lineHeight0{ line-height: 0%; }
+.lineHeight25{ line-height: 25%; }
+.lineHeight50{ line-height: 50%; }
+.lineHeight75{ line-height: 75%; }
+.lineHeight100{ line-height: 100%; }
+.lineHeight125{ line-height: 125%; }
+.lineHeight150{ line-height: 150%; }
+.lineHeight175{ line-height: 175%; }
+.lineHeight200{ line-height: 200%; }
+.lineHeight225{ line-height: 225%; }
+.lineHeight250{ line-height: 250%; }
+
+.text-highlight-{
+	.-(@i: length(@colors)) when (@i > 0) {
+		@name: extract(@colors, @i);
+		&@{name} {
+			padding:3px;
+			background-color: lighten(@@name,25%);
+			color: darken(@@name,25%);	
+
+		}
+		.-((@i - 1))
+ 	} .-;
+}
+
+.text-{
+	.-(@i: length(@colors)) when (@i > 0) {
+		@name: extract(@colors, @i);
+		&@{name} {
+			color: @@name;
+
+			&.text-hover:hover{
+				color:darken(@@name, 25%);
+			}
+		}
+		.-((@i - 1))
+ 	} .-;
+}

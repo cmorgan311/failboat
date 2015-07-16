@@ -1,0 +1,44 @@
+@import '../../bower_components/font-awesome/less/font-awesome';
+@import 'colors';
+@import 'text';
+
+body{
+	font-family: 'Jura', sans-serif;
+}
+
+.square{
+	border-radius: 0px;
+	width:100px;
+	height:100px;
+	float:left;
+}
+
+.float-left{ float:left; }
+.float-right{ float:right; }
+.float-none{ float:none; }
+
+.margin{
+	.-(@i: 50) when (@i >= 0) {
+		&Bottom@{i} { margin-bottom: (@i * 1px); }
+		&Top@{i} { margin-top: (@i * 1px); }
+		&Left@{i} { margin-left: (@i * 1px); }
+		&Right@{i} { margin-right: (@i * 1px); }
+		&Bottom-@{i} { margin-bottom: (@i * -1px); }
+		&Top-@{i} { margin-top: (@i * -1px); }
+		&Left-@{i} { margin-left: (@i * -1px); }
+		&Right-@{i} { margin-right: (@i * -1px); }
+		&@{i}{ margin: (@i * 1px); }
+		.-((@i - 1))
+ 	} .-;
+}
+
+.padding{
+	.-(@i: 50) when (@i >= 0) {
+		&Bottom@{i} { padding-bottom: (@i * 1px); }
+		&Top@{i} { padding-top: (@i * 1px); }
+		&Left@{i} { padding-left: (@i * 1px); }
+		&Right@{i} { padding-right: (@i * 1px); }
+		&@{i}{ padding: (@i * 1px); }
+		.-((@i - 1))
+ 	} .-;
+}

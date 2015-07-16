@@ -1,0 +1,47 @@
+@blue: #1C83F7;
+@purple: #A632E8;
+@pink: #F256A9;
+@red: #E53939;
+@orange: #FFA254;
+@teal: #0FEAD1;
+@green: #5cb85c;
+@yellow: #F7E100;
+@gray: rgb(198, 198, 198);
+@whitish: rgb(245,245,245);
+@white: rgb(255,255,255);
+@black: rgb(5,5,5);
+@blackish: rgb(55,55,55);
+
+@colors: blue, purple, pink, red, orange, teal, green, yellow, gray, whitish, white, black, blackish;
+
+.bg-{
+	.-(@i: length(@colors)) when (@i > 0) {
+		@name: extract(@colors, @i);
+		&@{name} {
+			background-color: @@name;
+
+			&.bg-hover:hover{
+				background-color:lighten(@@name, 10%);
+			}
+		}
+		.-((@i - 1))
+ 	} .-;
+}
+
+.border-{
+	.-(@i: length(@colors)) when (@i > 0) {
+		@name: extract(@colors, @i);
+		&@{name} {
+			border-color: lighten(@@name, 15%);
+			border-size: 1px;
+			border-style: solid;
+
+			&.border-hover:hover{
+				border-color:@@name;
+			}
+		}
+		.-((@i - 1))
+ 	} .-;
+}
+
+
