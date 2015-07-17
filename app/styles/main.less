@@ -3,6 +3,8 @@
 @import 'colors';
 @import 'buttons';
 @import 'text';
+@import 'animations';
+
 @four-sides: top, left, right, bottom;
 @border-styles: dashed, dotted, double, grooved, hidden, inset, outset, none, ridge, solid;
 
@@ -12,9 +14,27 @@ body{
 
 .square{
 	border-radius: 0px;
-	width:100px;
-	height:100px;
+	min-width:50px;
+	min-height:50px;
 	float:left;
+
+	&.square-small{
+		min-width:100px;
+		min-height:100px;
+	}
+	&.square-medium{
+		min-width:250px;
+		min-height:250px;
+	}
+	&.square-large{
+		min-width:400px;
+		min-height:400px;
+	}
+	&.square-giant{
+		min-width:700px;
+		min-height:700px;
+	}
+
 }
 
 .float-left{ float:left; }
@@ -46,6 +66,9 @@ body{
 		.-((@i - 1))
  	} .-;
 }
+
+.curved{ border-radius:10px; }
+.circle{ border-radius:2000px; min-width:33px; min-height:33px;}
 
 
 .border-style-{
