@@ -2,6 +2,8 @@
 @import '../../bower_components/bootstrap/less/bootstrap';
 @import 'colors';
 @import 'text';
+@four-sides: top, left, right, bottom;
+@border-styles: dashed, dotted, double, grooved, hidden, inset, outset, none, ridge, solid;
 
 body{
 	font-family: 'Jura', sans-serif;
@@ -43,3 +45,44 @@ body{
 		.-((@i - 1))
  	} .-;
 }
+
+
+.border-style-{
+	.-(@i: length(@border-styles)) when (@i > 0) {
+		@name: extract(@border-styles, @i);
+		&@{name} {
+			border-style: @name;
+		}
+		.-((@i - 1))
+ 	} .-;
+}
+
+.border-remove-{
+	.-(@i: length(@four-sides)) when (@i > 0) {
+		@name: extract(@four-sides, @i);
+		&@{name} {
+			border-@{name}: none;
+		}
+		.-((@i - 1))
+ 	} .-;
+}
+
+
+.border-color-{
+	.-(@i: length(@colors)) when (@i > 0) {
+		@name: extract(@colors, @i);
+		&@{name} {
+			border-color: @@name;
+		}
+		.-((@i - 1))
+ 	} .-;
+}
+
+.border-size-{
+	.-(@i: 20) when (@i >= 0) {
+		&@{i} { border-width: (@i * 1px); }
+		.-((@i - 1))
+ 	} .-;
+}
+
+
