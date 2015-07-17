@@ -1,0 +1,71 @@
+@import 'colors';
+
+.btn{
+	border-radius:0px;
+	background-color:none !important;
+	border:none !important;
+	color:@blackish;
+
+
+	&.btn-curved{ border-radius:10px; }
+	&.btn-circle{ border-radius:2000px; }
+
+	&.btn-hover-down:hover{
+		transform: scale(.9,.9);
+	}
+	&.btn-hover-up:hover{
+		transform: scale(1.2,1.2);
+	}
+	&.btn-shadow{
+		-webkit-box-shadow: 0px 8px 21px 3px rgba(50, 50, 50, 0.55);
+		-moz-box-shadow: 0px 8px 21px 3px rgba(50, 50, 50, 0.55);
+		box-shadow: 0px 8px 21px 3px rgba(50, 50, 50, 0.55);
+	}
+
+	&.btn-cta{
+		&:hover{ transform: scale(.9,.9); }
+		-webkit-box-shadow: 0px 8px 21px 3px rgba(50, 50, 50, 0.55);
+		-moz-box-shadow: 0px 8px 21px 3px rgba(50, 50, 50, 0.55);
+		box-shadow: 0px 8px 21px 3px rgba(50, 50, 50, 0.55);
+		border:1px solid darken(@gray,5%);
+	}
+
+	&.btn-shadow-off{
+		-webkit-box-shadow: 0px 0px 0px 0px rgba(0,0,0,0);
+		-moz-box-shadow: 0px 0px 0px 0px rgba(0,0,0,0);
+		box-shadow: 0px 0px 0px 0px rgba(0,0,0,0);
+	}
+
+	&.btn-hover-slide-left:hover{
+		position:relative;
+		animation-duration:1.5s;
+		animation-name: hoverSlideLeft;
+		animation-iteration-count:1;
+		left:-50px;
+	}
+
+	&.btn-hover-slide-right:hover{
+		position:relative;
+		animation-duration:1.5s;
+		animation-name: hoverSlideRight;
+		animation-iteration-count:1;
+		left:50px;
+	}
+}
+
+@keyframes hoverSlideLeft {
+    0% { left:0px; }
+    5% {  left:-5px; }
+    100% { left:-50px; }
+}
+
+@keyframes hoverSlideRight {
+    0% { left:0px; }
+    5% {  left:5px; }
+    100% { left:50px; }
+}
+
+
+
+
+
