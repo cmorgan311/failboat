@@ -39,22 +39,26 @@
 
 .hover-teeter:hover, .teeter{
   animation: teeter 2.5s 1;
-  transform: scale(1,1);
   position:relative;
   left:0px;
+  transform: rotate(0deg) scale(1,1);
+}
+
+.hover-spin:hover, .spin{
+  animation: spin 1s 1;
   transform: rotate(0deg);
 }
 
-.heart-beat, .teeter{
+.heart-beat, .teeter, .spin{
   animation-iteration-count: infinite;
 }
 
 @keyframes teeter{
-  0% { left:0px; transform:rotate(0deg); }
-  20% { left: 20px; transform:rotate(25deg);}
-  50% { left: 22px; transform:rotate(30deg);}
-  70% { left:-10px; transform:rotate(-10deg); }
-  100% { left:0px; transform:rotate(0deg); }
+  0% { left:0px; transform:rotate(0deg) scale(1,1); }
+  20% { left: 20px; transform:rotate(25deg) scale(1.05,1.05);}
+  50% { left: 22px; transform:rotate(30deg) scale(1.05,1.05);}
+  70% { left:-10px; transform:rotate(-10deg) scale(.95,.95); }
+  100% { left:0px; transform:rotate(0deg) scale(1,1); }
 }
 
 @keyframes heartBeat {
