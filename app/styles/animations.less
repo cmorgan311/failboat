@@ -49,8 +49,23 @@
   transform: rotate(0deg) scale(1,1);
 }
 
-.heart-beat, .teeter, .spin{
+.hover-wiggle:hover, .wiggle{
+  animation: wiggle .65s 1;
+  position:relative;
+  top:0px; left:0px;
+  transform: rotateZ(0deg) scale(1,1);
+}
+
+.heart-beat, .teeter, .spin, .wiggle{
   animation-iteration-count: infinite;
+}
+
+
+@keyframes wiggle{
+  0%{ top:0px; left:1px; transform: rotateZ(0deg) scale(1.05,1.05); }
+  30%{ top:-11px; left:20px; transform: rotateZ(-25deg) scale(.9,.9); }
+  70%{ top:-4px; left:-20px; transform: rotateZ(25deg) scale(1.1,1.1); }
+  100%{ top:0px; left:-1px; transform: rotateZ(0deg) scale(1.05,1.05); }
 }
 
 @keyframes spin{
