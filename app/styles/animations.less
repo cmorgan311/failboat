@@ -46,11 +46,17 @@
 
 .hover-spin:hover, .spin{
   animation: spin 1s 1;
-  transform: rotate(0deg);
+  transform: rotate(0deg) scale(1,1);
 }
 
 .heart-beat, .teeter, .spin{
   animation-iteration-count: infinite;
+}
+
+@keyframes spin{
+  0%{ transform: rotate(0deg) scale(1.05,1.05); }
+  10%{ transform: rotate(10deg) scale(1.15,1.15); }
+  100%{ transform: rotate(360deg) scale(1,1); }
 }
 
 @keyframes teeter{
