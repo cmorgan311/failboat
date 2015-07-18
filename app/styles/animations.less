@@ -37,13 +37,29 @@
   transform: scale(1,1);
 }
 
-.heart-beat{
+.hover-teeter:hover, .teeter{
+  animation: teeter 2.5s 1;
+  transform: scale(1,1);
+  position:relative;
+  left:0px;
+  transform: rotate(0deg);
+}
+
+.heart-beat, .teeter{
   animation-iteration-count: infinite;
+}
+
+@keyframes teeter{
+  0% { left:0px; transform:rotate(0deg); }
+  20% { left: 20px; transform:rotate(25deg);}
+  50% { left: 22px; transform:rotate(30deg);}
+  70% { left:-10px; transform:rotate(-10deg); }
+  100% { left:0px; transform:rotate(0deg); }
 }
 
 @keyframes heartBeat {
   0% { transform: scale(1,1); }
-  15% { transform: scale(1.1,1.1); }
+  5% { transform: scale(1.1,1.1); }
   80% { transform: scale(.9,.9); }
   100% { transform: scale(1.05,1.05); }
 }
