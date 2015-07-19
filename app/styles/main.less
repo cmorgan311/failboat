@@ -109,4 +109,65 @@ body{
  	} .-;
 }
 
+.hover-color-{
+  .-(@i: length(@colors)) when (@i > 0) {
+    @name: extract(@colors, @i);
+    
+    &@{name}:hover {
+      background-color: @@name;
+      transition: background-color 1.5s ease;
+    }
+
+    .-((@i - 1))
+  } .-;
+}
+
+.hover-color-slow-{
+  .-(@i: length(@colors)) when (@i > 0) {
+    @name: extract(@colors, @i);
+    
+    &@{name}:hover {
+      background-color: @@name;
+      transition: background-color 5s ease;
+    }
+
+    .-((@i - 1))
+  } .-;
+}
+
+.color-{
+  .-(@i: length(@colors)) when (@i > 0) {
+    @name: extract(@colors, @i);
+    
+    &@{name} {
+      background-color: @@name;
+      transition: background-color 1.5s ease;
+    }
+
+    .-((@i - 1))
+  } .-;
+}
+
+.color-slow-{
+  .-(@i: length(@colors)) when (@i > 0) {
+    @name: extract(@colors, @i);
+    
+    &@{name} {
+      background-color: @@name;
+      transition: background-color 4s ease;
+    }
+
+    .-((@i - 1))
+  } .-;
+}
+
+.lose-background{
+	background-color: rgba(0,0,0,0);
+	transition: background-color 3s ease;
+}
+
+.hover-lose-background:hover{
+	background-color: rgba(0,0,0,0);
+	transition: background-color 3s ease;
+}
 

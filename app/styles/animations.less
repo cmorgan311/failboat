@@ -50,8 +50,8 @@
   transform: rotate(0deg) scale(1,1);
 }
 
-.hover-wiggle:hover, .wiggle{
-  animation: wiggle .55s 1;
+.hover-bell:hover, .bell{
+  animation: bell .4s 1;
   position:relative;
   top:0px; left:0px;
   transform: rotateZ(0deg) scale(1,1);
@@ -64,8 +64,8 @@
   transform: scale(1,1);
 }
 
-.hover-flip-up:hover, .flip-up{
-  animation: flipUp .8s 1;
+.hover-flip:hover, .flip{
+  animation: flip .85s 1;
   transform: scaleX(1) scaleY(1) rotateX(0deg);
 }
 
@@ -74,7 +74,7 @@
   transform: scaleX(1) scaleY(1) rotateY(0deg);
 }
 
-.heart-beat, .teeter, .spin, .wiggle, .shake, .flip-up, .flip-card{
+.heart-beat, .teeter, .spin, .bell, .shake, .flip, .flip-card{
   animation-iteration-count: infinite;
 }
 
@@ -87,11 +87,11 @@
   100%{ transform: scaleY(1) scaleX(1) rotateY(10deg); }
 }
 
-@keyframes flipUp{
+@keyframes flip{
   0%{ transform: scaleX(.95) scaleX(1) rotateX(10deg); }
   25%{ transform: scaleX(.9) scaleX(1.05) rotateX(70deg); }
   35%{ transform: scaleX(1.1) scaleX(1.05) rotateX(80deg); }
-  55%{ transform: scaleX(1.4) scaleX(.95) rotateX(115deg); }
+  55%{ transform: scaleX(1.35) scaleX(.95) rotateX(125deg); }
   70%{ transform: scaleX(1.1) scaleX(.95) rotateX(70deg); }
   100%{ transform: scaleX(1) scaleX(1) rotateX(10deg); }
 }
@@ -103,7 +103,7 @@
   100%{ left:-1px; transform: scale(1,1); }
 }
 
-@keyframes wiggle{
+@keyframes bell{
   0%{ top:0px; left:1px; transform: rotateZ(0deg) scale(1.05,1.05); }
   30%{ top:0px; left:10px; transform: rotateZ(-35deg) scale(.9,.9); }
   70%{ top:0px; left:-10px; transform: rotateZ(35deg) scale(1.1,1.1); }
