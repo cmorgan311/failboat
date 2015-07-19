@@ -1,33 +1,33 @@
 .hover-down:hover, .scale-down{
-  animation: scaleDown .75s 1;
+  animation: scaleDown .55s 1;
   transform: scale(.85,.85);
 }
 
 .hover-up:hover, .scale-up{
-  animation: scaleUp .75s 1;
+  animation: scaleUp .55s 1;
   transform: scale(1.3,1.3);
 }
 
 .hover-slide-left:hover, .slide-left{
-  animation: slideLeft 1s 1;
+  animation: slideLeft .8s 1;
   position:relative;
   left:-20px;
 }
 
 .hover-slide-left.slide-far:hover, .slide-left.slide-far{
-  animation: slideLeftFar 1.5s 1;
+  animation: slideLeftFar 1.3s 1;
   position:relative;
   left:-65px;
 }
 
 .hover-slide-right:hover, .slide-right{
-  animation: slideRight 1s 1;
+  animation: slideRight .8s 1;
   position:relative;
   left:20px;
 }
 
 .hover-slide-right.slide-far:hover, .slide-right.slide-far{
-  animation: slideRightFar 1.5s 1;
+  animation: slideRightFar 1.3s 1;
   position:relative;
   left:65px;
 }
@@ -50,21 +50,34 @@
 }
 
 .hover-wiggle:hover, .wiggle{
-  animation: wiggle .65s 1;
+  animation: wiggle .45s 1;
   position:relative;
   top:0px; left:0px;
   transform: rotateZ(0deg) scale(1,1);
 }
 
-.heart-beat, .teeter, .spin, .wiggle{
+.hover-shake:hover, .shake{
+  animation: shake .65s 1;
+  position:relative;
+  left:0px;
+  transform: rotateZ(0deg) scale(1,1);
+}
+
+.heart-beat, .teeter, .spin, .wiggle, .shake{
   animation-iteration-count: infinite;
 }
 
+@keyframes shake{
+  0%{ left:1px; transform: rotateZ(0deg) scale(1.05,1.05); }
+  30%{ left:0px; transform: rotateZ(-25deg) scale(.9,.9); }
+  70%{ left:0px; transform: rotateZ(25deg) scale(1.1,1.1); }
+  100%{ left:-1px; transform: rotateZ(0deg) scale(1.05,1.05); }
+}
 
 @keyframes wiggle{
   0%{ top:0px; left:1px; transform: rotateZ(0deg) scale(1.05,1.05); }
-  30%{ top:-11px; left:20px; transform: rotateZ(-25deg) scale(.9,.9); }
-  70%{ top:-4px; left:-20px; transform: rotateZ(25deg) scale(1.1,1.1); }
+  30%{ top:0px; left:10px; transform: rotateZ(-25deg) scale(.9,.9); }
+  70%{ top:0px; left:-10px; transform: rotateZ(25deg) scale(1.1,1.1); }
   100%{ top:0px; left:-1px; transform: rotateZ(0deg) scale(1.05,1.05); }
 }
 
@@ -83,10 +96,11 @@
 }
 
 @keyframes heartBeat {
-  0% { transform: scale(1,1); }
-  5% { transform: scale(1.1,1.1); }
-  80% { transform: scale(.9,.9); }
-  100% { transform: scale(1.05,1.05); }
+  0% { transform: scale(1.05,1.05); }
+  5% { transform: scale(1.15,1.15); }
+  60% { transform: scale(.85,.85); }
+  90% { transform: scale(1.1,1.1); }
+  100% { transform: scale(1,1); }
 }
 
 @keyframes slideLeftFar {
@@ -114,13 +128,13 @@
 }
 
 @keyframes scaleDown {
-  0% { transform: scale(1,1); }
+  0% { transform: scale(1.05,1.05); }
   10% { transform: scale(.95,.95); }
-  100% { transform: scale(.85,.85); }
+  100% { transform: scale(.83,.83); }
 }
 
 @keyframes scaleUp {
-  0% { transform: scale(1,1); }
-  10% { transform: scale(1.1,1.1); }
-  100% { transform: scale(1.3,1.3); }
+  0% { transform: scale(.95,.95); }
+  10% { transform: scale(1.05,1.05); }
+  100% { transform: scale(1.32,1.32); }
 }
