@@ -1,3 +1,4 @@
+@import 'colors';
 .hover-down:hover, .scale-down{
   animation: scaleDown .55s 1;
   transform: scale(.85,.85);
@@ -38,7 +39,7 @@
 }
 
 .hover-teeter:hover, .teeter{
-  animation: teeter 1.5s 1;
+  animation: teeter 1.65s 1;
   position:relative;
   left:0px;
   transform: rotate(0deg) scale(1,1);
@@ -50,34 +51,62 @@
 }
 
 .hover-wiggle:hover, .wiggle{
-  animation: wiggle .45s 1;
+  animation: wiggle .55s 1;
   position:relative;
   top:0px; left:0px;
   transform: rotateZ(0deg) scale(1,1);
 }
 
 .hover-shake:hover, .shake{
-  animation: shake .65s 1;
+  animation: shake .35s 1;
   position:relative;
   left:0px;
-  transform: rotateZ(0deg) scale(1,1);
+  transform: scale(1,1);
 }
 
-.heart-beat, .teeter, .spin, .wiggle, .shake{
+.hover-flip-up:hover, .flip-up{
+  animation: flipUp .8s 1;
+  transform: scaleX(1) scaleY(1) rotateX(0deg);
+}
+
+.hover-flip-card:hover, .flip-card{
+  animation: flipCard 1s 1;
+  transform: scaleX(1) scaleY(1) rotateY(0deg);
+}
+
+.heart-beat, .teeter, .spin, .wiggle, .shake, .flip-up, .flip-card{
   animation-iteration-count: infinite;
 }
 
+@keyframes flipCard{
+  0%{ transform: scaleY(.95) scaleX(1) rotateY(10deg); }
+  25%{ transform: scaleY(.85) scaleX(1.05) rotateY(70deg); }
+  35%{ transform: scaleY(1.05) scaleX(1.05) rotateY(80deg); }
+  55%{ transform: scaleY(1.35) scaleX(.95) rotateY(105deg); }
+  70%{ transform: scaleY(1.05) scaleX(.95) rotateY(70deg); }
+  100%{ transform: scaleY(1) scaleX(1) rotateY(10deg); }
+}
+
+@keyframes flipUp{
+  0%{ transform: scaleX(.95) scaleX(1) rotateX(10deg); }
+  25%{ transform: scaleX(.9) scaleX(1.05) rotateX(70deg); }
+  35%{ transform: scaleX(1.1) scaleX(1.05) rotateX(80deg); }
+  55%{ transform: scaleX(1.4) scaleX(.95) rotateX(115deg); }
+  70%{ transform: scaleX(1.1) scaleX(.95) rotateX(70deg); }
+  100%{ transform: scaleX(1) scaleX(1) rotateX(10deg); }
+}
+
 @keyframes shake{
-  0%{ left:1px; transform: rotateZ(0deg) scale(1.05,1.05); }
-  30%{ left:0px; transform: rotateZ(-25deg) scale(.9,.9); }
-  70%{ left:0px; transform: rotateZ(25deg) scale(1.1,1.1); }
-  100%{ left:-1px; transform: rotateZ(0deg) scale(1.05,1.05); }
+  0%{ left:1px; transform: scale(1.05,1.05); }
+  30%{ left:17px; transform: scale(.95,.95); }
+  70%{ left:-12px; transform: scale(1.05,1.05); }
+  100%{ left:-1px; transform: scale(1,1); }
 }
 
 @keyframes wiggle{
   0%{ top:0px; left:1px; transform: rotateZ(0deg) scale(1.05,1.05); }
-  30%{ top:0px; left:10px; transform: rotateZ(-25deg) scale(.9,.9); }
-  70%{ top:0px; left:-10px; transform: rotateZ(25deg) scale(1.1,1.1); }
+  30%{ top:0px; left:10px; transform: rotateZ(-35deg) scale(.9,.9); }
+  70%{ top:0px; left:-10px; transform: rotateZ(35deg) scale(1.1,1.1); }
   100%{ top:0px; left:-1px; transform: rotateZ(0deg) scale(1.05,1.05); }
 }
 
