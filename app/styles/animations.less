@@ -33,8 +33,32 @@
   left:65px;
 }
 
-.hover-heart-beat:hover, .heart-beat{
-  animation: heartBeat .5s 1;
+.hover-slide-up:hover, .slide-up{
+  animation: slideUp .8s 1;
+  position:relative;
+  top:-20px;
+}
+
+.hover-slide-up.slide-far:hover, .slide-up.slide-far{
+  animation: slideUpFar 1.3s 1;
+  position:relative;
+  top:-65px;
+}
+
+.hover-slide-down:hover, .slide-down{
+  animation: slideDown .8s 1;
+  position:relative;
+  top:20px;
+}
+
+.hover-slide-down.slide-far:hover, .slide-down.slide-far{
+  animation: slideDownFar 1.3s 1;
+  position:relative;
+  top:65px;
+}
+
+.hover-pulse:hover, .pulse{
+  animation: pulse .5s 1;
   transform: scale(1,1);
 }
 
@@ -51,7 +75,7 @@
 }
 
 .hover-bell:hover, .bell{
-  animation: bell .4s 1;
+  animation: bell .5s 1;
   position:relative;
   top:0px; left:0px;
   transform: rotateZ(0deg) scale(1,1);
@@ -74,7 +98,7 @@
   transform: scaleX(1) scaleY(1) rotateY(0deg);
 }
 
-.heart-beat, .teeter, .spin, .bell, .shake, .flip, .flip-card{
+.pulse, .teeter, .spin, .bell, .shake, .flip, .flip-card{
   animation-iteration-count: infinite;
 }
 
@@ -105,8 +129,8 @@
 
 @keyframes bell{
   0%{ top:0px; left:1px; transform: rotateZ(0deg) scale(1.05,1.05); }
-  30%{ top:0px; left:10px; transform: rotateZ(-35deg) scale(.9,.9); }
-  70%{ top:0px; left:-10px; transform: rotateZ(35deg) scale(1.1,1.1); }
+  30%{ top:-5px; left:6px; transform: rotateZ(-35deg) scale(.9,.9); }
+  70%{ top:-5px; left:-6px; transform: rotateZ(35deg) scale(1.15,1.15); }
   100%{ top:0px; left:-1px; transform: rotateZ(0deg) scale(1.05,1.05); }
 }
 
@@ -124,7 +148,7 @@
   100% { left:0px; transform:rotate(0deg) scale(1,1); }
 }
 
-@keyframes heartBeat {
+@keyframes pulse {
   0% { transform: scale(1.05,1.05); }
   5% { transform: scale(1.15,1.15); }
   60% { transform: scale(.85,.85); }
@@ -154,6 +178,30 @@
   0% { left: 0px; }
   10% { left: 3px; }
   100% { left: 20px; }
+}
+
+@keyframes slideUp {
+  0% { top: 0px; }
+  10% { top: -3px; }
+  100% { top: -20px; }
+}
+
+@keyframes slideUpFar {
+  0% { top: 0px; }
+  10% { top: -4px; }
+  100% { top: -65px; }
+}
+
+@keyframes slideDown {
+  0% { top: 0px; }
+  10% { top: 3px; }
+  100% { top: 20px; }
+}
+
+@keyframes slideDownFar {
+  0% { top: 0px; }
+  10% { top: 4px; }
+  100% { top: 65px; }
 }
 
 @keyframes scaleDown {
