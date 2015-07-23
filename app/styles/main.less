@@ -6,6 +6,7 @@
 @import 'animations';
 
 @four-sides: top, left, right, bottom;
+@cursors: all-scroll, cell, context-menu, col-resize, copy, crosshair, e-resize, ew-resize, help, move, n-resize, ne-resize, nesw-resize, no-drop, none, not-allowed, pointer, progress, row-resize, s-resize, se-resize, sw-resize, text, vertical-text,w-resize-,wait,zoom-in, zoom-out;
 @border-styles: dashed, dotted, double, grooved, hidden, inset, outset, none, ridge, solid;
 
 body{
@@ -202,7 +203,12 @@ body{
 	transition: background-color 3s ease;
 }
 
-
-.hover-lose-grad-background{
-
+.cursor-{
+	.-(@i: length(@cursors)) when (@i > 0) {
+		@name: extract(@cursors, @i);
+		&@{name} {
+			cursor: @name;
+		}
+		.-((@i - 1))
+ 	} .-;
 }
