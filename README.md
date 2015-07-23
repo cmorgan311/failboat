@@ -18,4 +18,9 @@ While i love css and beleive design to be at the center of development and the o
 3. Text Highlight
 4. Font Alterations
 5. Scale Text
-6. ... more!
+6. Borders
+7. Margin & Padding
+8. Button (use bg/font colration + cursor)
+9. CSS Animation
+10. Applied Science
+11. Cursor Styles
