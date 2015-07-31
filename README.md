@@ -24,3 +24,8 @@ While i love css and beleive design to be at the center of development and the o
 9. CSS Animation
 10. Applied Science
 11. Cursor Styles
+
+##Coming soon
+1. Form elements
+2. Component: Datalist
+... more?

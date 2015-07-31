@@ -6,7 +6,8 @@ import del from 'del';
 import {stream as wiredep} from 'wiredep';
 import less from 'gulp-less';
 import path from 'path';
-
+import cssmin from 'gulp-cssmin'
+import rename from 'gulp-rename'
 
 const $ = gulpLoadPlugins();
 const reload = browserSync.reload;
@@ -96,7 +97,7 @@ gulp.task('extras', () => {
 
 gulp.task('clean', del.bind(null, ['.tmp', 'dist']));
 
-gulp.task('serve', ['less', 'fonts'], () => {
+gulp.task('serve', ['less', 'fonts', 'minCss'], () => {
   browserSync({
     notify: false,
     port: 9000,
@@ -163,4 +164,14 @@ gulp.task('build', ['lint', 'html', 'images', 'fonts', 'extras'], () => {
 
 gulp.task('default', ['clean'], () => {
   gulp.start('build');
+});
+
+gulp.task('minCss', function () {
+    gulp.src('.tmp/styles/main.css')
+        .pipe(cssmin())
+        .pipe(rename({suffix: '.min'}))
+        .pipe(gulp.dest('.tmp/styles/'))
+        .pipe(gulp.dest('dist/styles/'))
+        .pipe(gulp.dest(''));
+
 });
